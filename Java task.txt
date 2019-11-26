@@ -1,0 +1,67 @@
+
+
+
+1. Implementirati Java (Spring Boot) back-end aplikaciju (jar) sa REST API-jem i Maven build-om.
+Koristeci Hibernate (JPA), generisati tabelu u MySQL bazi ROBA.
+
+ROBA (sifarnik)
+---------------
+ID (PK)
+NAZIV
+
+
+Implementirati CRUD operacije za robu na osnovu JSON primera:
+
+
+{
+  "id": 5L,
+  "naziv": "monitor"
+}
+
+
+
+2. Implementirati CRUD operacije na nivou dokumenta (DOKUMENT 1->n STAVKA_DOKUMENTA) za tabele:
+
+
+DOKUMENT
+--------
+ID (PK)
+NAZIV
+IZNOS
+
+
+
+STAVKA_DOKUMENTA
+----------------
+ID (PK)
+KOLICINA
+CENA
+DOKUMENT_ID (FK)
+ROBA_ID (FK)
+
+na osnovu JSON primera za GET:
+
+{
+  "id": 10L,
+  "naziv": "racun-1"
+  "stavkaDokumenta": [
+    {
+      "id": 45L,
+      "kolicina": 2,
+      "cena": 45.57,
+      "roba": {
+        "id": 5L,
+        "naziv": "monitor"
+    },
+    {
+      "id": 55L,
+      "kolicina": 3,
+      "cena": 67.23,
+      "roba": {
+        "id": 6L,
+        "naziv": "televizor"
+    }
+  ]
+}
+
+Bonus feature - JUnit i Integracioni testovi. :)
