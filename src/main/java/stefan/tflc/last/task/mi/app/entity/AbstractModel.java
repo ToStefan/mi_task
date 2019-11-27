@@ -13,7 +13,7 @@ import lombok.Setter;
 @MappedSuperclass
 @Getter
 @Setter
-public class AbstractModel {
+public abstract class AbstractModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

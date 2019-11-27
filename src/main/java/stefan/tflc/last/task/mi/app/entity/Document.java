@@ -24,10 +24,7 @@ public class Document extends AbstractModel {
 	@NotNull
 	private String name;
 
-	@NotNull
-	private Integer amount;
-
-	@OneToMany(mappedBy = "id", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	public Set<DocumentItem> documentItem;
+	@OneToMany(mappedBy = "document", fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+	public Set<DocumentItem> documentItems;
 
 }

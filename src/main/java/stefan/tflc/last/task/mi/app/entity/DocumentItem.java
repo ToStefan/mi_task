@@ -31,7 +31,7 @@ public class DocumentItem extends AbstractModel {
 	@JoinColumn(name = "goods_id", nullable = false)
 	public Goods goods;
 
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
 	@JoinColumn(name = "document_id", nullable = false)
 	public Document document;
 

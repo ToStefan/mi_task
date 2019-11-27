@@ -8,11 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @JsonInclude(value = JsonInclude.Include.NON_NULL)
-public class DocumentItemDTO extends BaseDTO {
+public class BaseDTO {
 
-	private Integer quantity;
-	private Integer price;
-	public Long goodsId;
-	public Long documentId;
-
+	private Long id;
 }
