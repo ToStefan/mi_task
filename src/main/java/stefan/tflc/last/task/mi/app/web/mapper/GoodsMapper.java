@@ -12,7 +12,7 @@ public class GoodsMapper implements BaseMapper<Goods, GoodsDTO> {
 	public Goods toEntity(GoodsDTO dto) {
 		Goods entity = new Goods();
 		entity.setId(dto.getId());
-		entity.setName(dto.getName());
+		entity.setCode(dto.getCode());
 		return entity;
 	}
 
@@ -20,7 +20,7 @@ public class GoodsMapper implements BaseMapper<Goods, GoodsDTO> {
 	public GoodsDTO toDto(Goods entity) {
 		GoodsDTO dto = new GoodsDTO();
 		dto.setId(entity.getId());
-		dto.setName(entity.getName());
+		dto.setCode(entity.getCode());
 		return dto;
 	}
 

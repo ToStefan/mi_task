@@ -1,7 +1,7 @@
-INSERT INTO GOODS(id, name) VALUES(1, 'Goods I - 100');
-INSERT INTO GOODS(id, name) VALUES(2, 'Goods II - 75');
-INSERT INTO GOODS(id, name) VALUES(3, 'Goods III - 50');
-INSERT INTO GOODS(id, name) VALUES(4, 'Goods IV - 25');
+INSERT INTO GOODS(id, code) VALUES(1, 'Goods I - 100');
+INSERT INTO GOODS(id, code) VALUES(2, 'Goods II - 75');
+INSERT INTO GOODS(id, code) VALUES(3, 'Goods III - 50');
+INSERT INTO GOODS(id, code) VALUES(4, 'Goods IV - 25');
 
 
 INSERT INTO DOCUMENTS(id, name) VALUES(1, 'Document I');

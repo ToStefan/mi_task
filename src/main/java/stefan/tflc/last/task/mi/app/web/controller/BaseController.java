@@ -1,9 +1,10 @@
 package stefan.tflc.last.task.mi.app.web.controller;
 
-import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import stefan.tflc.last.task.mi.app.entity.AbstractModel;
 import stefan.tflc.last.task.mi.app.service.BaseService;
 import stefan.tflc.last.task.mi.app.web.dto.BaseDTO;
-import stefan.tflc.last.task.mi.app.web.dto.PageDTO;
 import stefan.tflc.last.task.mi.app.web.mapper.BaseMapper;
 
 @SuppressWarnings("rawtypes")
@@ -29,11 +29,10 @@ public abstract class BaseController<S extends BaseService, M extends BaseMapper
 	M mapper;
 
 	@SuppressWarnings("unchecked")
-	@PostMapping("/pages/{page}/{elementsCount}")
-	public ResponseEntity<Set<DTO>> findAll(@PathVariable Integer page, @PathVariable Integer elementsCount) {
-		PageDTO pageDto = new PageDTO(page, elementsCount);
-		List<E> entities = service.findAll(pageDto).getContent();
-		return ResponseEntity.ok().body(mapper.toDto(entities));
+	@GetMapping
+	public ResponseEntity<Set<DTO>> findAll(Pageable pageable) {
+		Page<E> entities = service.findAll(pageable);
+		return ResponseEntity.ok().body(mapper.toDto(entities.getContent()));
 	}
 
 	@SuppressWarnings({ "unchecked" })

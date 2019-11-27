@@ -10,5 +10,5 @@ import lombok.Setter;
 @JsonInclude(value = JsonInclude.Include.NON_NULL)
 public class GoodsDTO extends BaseDTO {
 
-	private String name;
+	private String code;
 }

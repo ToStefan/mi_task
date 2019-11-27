@@ -7,15 +7,22 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.Where;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 @Table(name = "goods")
 @Where(clause = "deleted = 'false'")
 public class Goods extends AbstractModel {
 
 	@NotNull
-	private String name;
+	private String code;
+	
+	public Goods(Long id, boolean deleted, String code) {
+		super();
+		this.code = code;
+	}
 }

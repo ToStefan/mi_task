@@ -1,9 +1,15 @@
 package stefan.tflc.last.task.mi.app;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
-@SpringBootTest
+import stefan.tflc.last.task.mi.app.unit.GoodsServiceTest;
+
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+	GoodsServiceTest.class
+})
 class MiTaskApplicationTests {
 
 	@Test
